@@ -1,43 +1,32 @@
 package com.hyein.algorithm;
 
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CastleCounterTest {
 
-    @Test
-    public void test1(){
-        int A[] = new int [] {2,2,3,4,3,3, 2, 2, 1, 1, 2, 5};
-        assertEquals(4, CastleCounter.Solution(A));
+    @ParameterizedTest
+    @MethodSource
+    public void test(int A[], int answer){
+        assertEquals(answer, CastleCounter.Solution(A));
     }
 
-    @Test
-    public void test2(){
-        int A[] = new int [] {2};
-        assertEquals(1, CastleCounter.Solution(A));
+    private static Stream<Arguments> test(){
+        return Stream.of(
+                Arguments.of(new int [] {2,2,3,4,3,3, 2, 2, 1, 1, 2, 5}, 4),
+                Arguments.of(new int [] {2}, 1),
+                Arguments.of(new int [] {-3, -3}, 1),
+                Arguments.of(new int [] {2, 2, 4}, 2),
+                Arguments.of(new int [] {2, 4, 4}, 2),
+                Arguments.of(new int [] {1, 2, 3, 4, 5}, 2)
+        );
     }
 
-    @Test
-    public void test3(){
-        int A[] = new int [] {-3, -3};
-        assertEquals(1, CastleCounter.Solution(A));
-    }
 
-    @Test
-    public void test4(){
-        int A[] = new int [] {2, 2, 4};
-        assertEquals(2, CastleCounter.Solution(A));
-    }
-
-    @Test
-    public void test5(){
-        int A[] = new int [] {2, 4, 4};
-        assertEquals(2, CastleCounter.Solution(A));
-    }
-
-    @Test
-    public void test6(){
-        int A[] = new int [] {1, 2, 3, 4, 5};
-        assertEquals(2, CastleCounter.Solution(A));
-    }
 }

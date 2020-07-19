@@ -8,6 +8,9 @@
         </processorPath>
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="Algorithm.main" target="1.8" />
+      <module name="Algorithm.test" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

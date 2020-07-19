@@ -1,46 +1,31 @@
 package com.hyein.algorithm;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
-import static org.junit.Assert.assertEquals;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MaxAppleCollectorTest {
 
-    @Test
-    public void test1(){
-        int[] trees = {6, 1, 4, 6, 3, 2, 7, 4};
-        int t = 2;
-        int u = 3;
-
-        assertEquals(24, MaxAppleCollector.getMaxCollectedApples(trees, t, u));
+    @ParameterizedTest
+    @MethodSource
+    public void test(int[] trees, int t, int u, int answer){
+        assertEquals(answer, MaxAppleCollector.getMaxCollectedApples(trees, t, u));
     }
 
-    @Test
-    public void test4(){
-        int[] trees = {2, 2, 3, 4, 3, 3, 2, 2, 1, 1, 2, 5};
-        int t = 3;
-        int u = 2;
-
-        assertEquals(17, MaxAppleCollector.getMaxCollectedApples(trees, t, u));
+    private static Stream<Arguments> test(){
+        return Stream.of(
+                Arguments.of(new int [] {6, 1, 4, 6, 3, 2, 7, 4}, 2, 3, 24),
+                Arguments.of(new int [] {2, 2, 3, 4, 3, 3, 2, 2, 1, 1, 2, 5}, 3, 2, 17),
+                Arguments.of(new int [] {1, 2, 3, 4}, 2, 2, 10),
+                Arguments.of(new int [] {10, 19, 15}, 2, 2, -1)
+        );
     }
 
-    @Test
-    public void test2(){
-        int[] trees = {1, 2, 3, 4};
-        int t = 2;
-        int u = 2;
-
-        assertEquals(10, MaxAppleCollector.getMaxCollectedApples(trees, t, u));
-    }
-
-    @Test
-    public void test3(){
-        int[] trees = {10, 19, 15};
-        int t = 2;
-        int u = 2;
-
-        assertEquals(-1, MaxAppleCollector.getMaxCollectedApples(trees, t, u));
-    }
 
 
 }
