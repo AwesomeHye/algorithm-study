@@ -23,6 +23,8 @@ import java.util.List;
  * • each element of array A is an integer within the range (-1,000,000,000..1,000,000,000).
  */
 public class CastleCounter {
+    protected void ss(){}
+    void as(){}
 
     public static int Solution(int[] A){
 
