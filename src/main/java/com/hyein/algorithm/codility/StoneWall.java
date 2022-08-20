@@ -10,11 +10,11 @@ import java.util.*;
 @Slf4j
 public class StoneWall {
     public static void main(String[] args) {
-        int[] wall ;
-        wall = new int[]{3,3,1,2};
-        wall = new int[]{2,5,1,4,6,7,9,10,1};
-        wall = new int[]{8,8,5,7,9,8,7,4,8};
-        log.info("{}", solution(wall));
+        int[] A ;
+        A = new int[]{3,3,1,2};
+        A = new int[]{2,5,1,4,6,7,9,10,1};
+        A = new int[]{8,8,5,7,9,8,7,4,8};
+        log.info("{}", solution(A));
     }
 
     private static int solution(int[] H) {
