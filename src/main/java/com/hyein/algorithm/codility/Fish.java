@@ -6,22 +6,6 @@ import java.util.Stack;
 
 @Slf4j
 public class Fish {
-    public static void main(String[] args) {
-        int[] A ;
-        A = new int[]{4,3};
-        A = new int[]{3};
-        A = new int[]{4,3,2,1,5};
-        A = new int[]{6,3,2,1,7};
-
-        int[] B ;
-        B = new int[]{1,1,1,0,0};
-        B = new int[]{0,1};
-        B = new int[]{0};
-        B = new int[]{0,1,0,0,0};
-        B = new int[]{1,0,0,0,0};
-        log.info("{}", solution(A, B));
-    }
-
     public static int solution(int[] A, int[] B) {
         if(A.length == 1) return 1;
         Stack<Integer> fishes = new Stack<>(); // key: idx
