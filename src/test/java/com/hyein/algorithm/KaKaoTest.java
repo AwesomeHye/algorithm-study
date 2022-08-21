@@ -1,5 +1,6 @@
 package com.hyein.algorithm;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -7,7 +8,8 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Stack;
 
-public class KakaoTest {
+@Slf4j
+public class KaKaoTest {
 
 
     @Test
