@@ -11,15 +11,7 @@ public class BinaryGap {
     }
 
     public static int solution(int N) {
-//        StringBuilder binary = new StringBuilder();
-//        int rest = 0;
-//        while((N != 1) && (N != 0)) {
-//            rest = N % 2;
-//            N = N / 2;
-//            binary.append(rest);
-//        }
-//        binary.append(N);
-
+        // 정수를 이진수로 바꾸는 메소드
         String binary = Integer.toBinaryString(N);
         log.info("{}", binary);
 

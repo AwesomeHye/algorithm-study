@@ -22,7 +22,7 @@ public class PermMissingElem {
 
     private static int solution(int[] A) {
         Arrays.sort(A);
-
+        // 값이 아닌 인덱스로 연산
         for (int i = 0; i < A.length; i++) {
             if(A[i] != i + 1) {
                 return i + 1;
