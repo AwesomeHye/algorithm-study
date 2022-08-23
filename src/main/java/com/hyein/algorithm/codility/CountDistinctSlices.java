@@ -14,6 +14,7 @@ public class CountDistinctSlices {
         int[] A ;
         A = new int[]{3,4,5,5,2};
         A = new int[]{3,4,5,2,5};
+        A = new int[]{1,2,2,2,3,2,4,5};
 
         int M = 0;
         M = 6;
